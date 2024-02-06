@@ -5,9 +5,11 @@ module RouterosGuestPlugin
   module Cap
     class DisableSSHInsertKey
       def self.disable_ssh_insert_key(machine)
-        # Echo a message on the guest machine
-        machine.ui.info("Disabling ssh insert key for RouterOS")
-        machine.config.ssh.insert_key = false
+        if machine.config.vm.guest == :routeros 
+          # Echo a message on the guest machine
+          machine.ui.info("Disabling ssh insert key for RouterOS")
+          machine.config.ssh.insert_key = false
+        end
       end
     end
   end

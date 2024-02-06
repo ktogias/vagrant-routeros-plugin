@@ -5,9 +5,11 @@ module RouterosGuestPlugin
   module Cap
     class ConfigureSSHShell
       def self.set_ssh_shell(machine)
-        # Echo a message on the guest machine
-        machine.ui.info("Setting ssh shell for RouterOS")
-        machine.config.ssh.shell = "\#"
+        if machine.config.vm.guest == :routeros 
+          # Echo a message on the guest machine
+          machine.ui.info("Setting ssh shell for RouterOS")
+          machine.config.ssh.shell = "\#"
+        end
       end
     end
   end

@@ -5,9 +5,11 @@ module RouterosGuestPlugin
   module Cap
     class DisableSyncedFolder
       def self.disable_synced_folder(machine)
-        # Echo a message on the guest machine
-        machine.ui.info("Disabling sync folder for RouterOS")
-        machine.config.vm.synced_folder '.', '/vagrant', disabled: true
+        if machine.config.vm.guest == :routeros 
+          # Echo a message on the guest machine
+          machine.ui.info("Disabling sync folder for RouterOS")
+          machine.config.vm.synced_folder '.', '/vagrant', disabled: true
+        end
       end
     end
   end
