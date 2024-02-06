@@ -6,7 +6,7 @@ require 'logger'
 module RouterosGuestPlugin
   class Guest < Vagrant.plugin("2", :guest)
     def detect?(machine)
-      return machine.config.vm.guest == "routeros"
+      machine.config.vm.guest == "routeros"
     end
   end
 end

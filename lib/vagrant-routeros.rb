@@ -23,7 +23,7 @@ module RouterosGuestPlugin
     # capabilities of the parent. To do that add the parent 
     # as an argument to `guest`. For example `guest(:myguestplugin, :linux)`
     # sets the parent plugin to be the linux guest plugin. 
-    guest(:routerosplugin, :linux) do
+    guest(:routeros, :debian) do
       Guest
     end
 
@@ -31,7 +31,7 @@ module RouterosGuestPlugin
     # be the name of the plugin from above. The second argument 
     # should be the name of the guest capability
     # For example:
-    guest_capability(:routerosplugin, :hello) do
+    guest_capability(:routeros, :hello) do
       require_relative 'cap/hello'
       Cap::Hello
     end
