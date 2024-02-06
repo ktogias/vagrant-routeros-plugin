@@ -1,7 +1,7 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-module MyVagrantGuestPlugin
+module RouterosGuestPlugin
   module Cap
     class Hello
       def self.hello(machine)

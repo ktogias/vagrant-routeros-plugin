@@ -3,6 +3,6 @@
 
 require File.expand_path("../../../../lib/guest", __FILE__)
 
-describe MyVagrantGuestPlugin::Guest do
+describe RouterosGuestPlugin::Guest do
   # TODO
 end

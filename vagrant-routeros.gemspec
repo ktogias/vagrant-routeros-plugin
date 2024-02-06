@@ -3,14 +3,14 @@
 Gem::Specification.new do |gem|
   # TODO: rename name, author, email, description, summary,
   # license, and homepage
-  gem.name          = "my-vagrant-guest-plugin"
+  gem.name          = "vagrant-routeros"
   gem.version       = File.read('VERSION').chop
-  gem.authors       = ["My Name"]
-  gem.email         = ["myemail@email.com"]
-  gem.description   = "Vagrant guest plugin"
-  gem.summary       = "Vagrant guest plugin"
+  gem.authors       = ["Konstantinos Togias"]
+  gem.email         = ["ktogias@gmail.com"]
+  gem.description   = "Vagrant RouterOS guest plugin"
+  gem.summary       = "Vagrant RouterOS guest plugin"
   gem.license       = 'MIT'
-  gem.homepage      = "https://github.com/hashicorp/vagrant-guest-plugin-skeleton-ruby"
+  gem.homepage      = "https://github.com/ktogias/vagrant-routeros-plugin"
 
   gem.add_development_dependency "rake", "~> 13.0"
   gem.add_development_dependency "rspec", "~> 3.5.0"

@@ -9,11 +9,10 @@ end
 
 require "guest/guest"
 
-# TODO: rename `MyVagrantGuestPlugin` to something more relevant
-module MyVagrantGuestPlugin
+module RouterosGuestPlugin
   class Plugin < Vagrant.plugin("2")
     # TODO: rename name and description
-    name "MyVagrantGuestPlugin"
+    name "RouterosGuestPlugin"
     description <<-DESC
     This is my guest plugin.
     DESC
@@ -24,7 +23,7 @@ module MyVagrantGuestPlugin
     # capabilities of the parent. To do that add the parent 
     # as an argument to `guest`. For example `guest(:myguestplugin, :linux)`
     # sets the parent plugin to be the linux guest plugin. 
-    guest(:myguestplugin) do
+    guest(:routerosplugin, :linux) do
       Guest
     end
 
@@ -32,7 +31,7 @@ module MyVagrantGuestPlugin
     # be the name of the plugin from above. The second argument 
     # should be the name of the guest capability
     # For example:
-    guest_capability(:myguestplugin, :hello) do
+    guest_capability(:routerosplugin, :hello) do
       require_relative 'cap/hello'
       Cap::Hello
     end
