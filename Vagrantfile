@@ -17,7 +17,11 @@ Vagrant.configure("2") do |config|
   config.vm.provider :libvirt do |libvirt|
     libvirt.management_network_mac = "52:54:00:ea:f2:ee"
   end
-  config.ssh.shell = "\#"
+  #config.ssh.shell = "\#"
+  #config.ssh.insert_key = false
+  # config.vm.allow_fstab_modification = false
+  # config.vm.allow_hosts_modification = false
+  #config.vm.synced_folder '.', '/vagrant', disabled: true
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

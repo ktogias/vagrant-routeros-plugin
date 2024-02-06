@@ -35,5 +35,33 @@ module RouterosGuestPlugin
       require_relative 'cap/hello'
       Cap::Hello
     end
+
+    guest_capability(:routeros, :persist_mount_shared_folder) do
+      require_relative 'guest/cap/persist_mount_shared_folder'
+      Cap::PersistMountSharedFolder
+    end
+
+    action_hook(:set_custom_ssh_shell, :machine_action_up) do |hook|
+      require_relative 'guest/cap/configure_ssh_shell'
+      hook.prepend(Proc.new do |env|
+          Cap::ConfigureSSHShell.set_ssh_shell(env[:machine])
+      end)
+    end
+
+    action_hook(:disable_synced_folder, :machine_action_up) do |hook|
+      require_relative 'guest/cap/disable_synced_folder'
+      hook.prepend(Proc.new do |env|
+          Cap::DisableSyncedFolder.disable_synced_folder(env[:machine])
+      end)
+    end
+
+    action_hook(:disable_ssh_insert_key, :machine_action_up) do |hook|
+      require_relative 'guest/cap/disable_ssh_insert_key'
+      hook.prepend(Proc.new do |env|
+          Cap::DisableSSHInsertKey.disable_ssh_insert_key(env[:machine])
+      end)
+    end
+
+    
   end
 end
