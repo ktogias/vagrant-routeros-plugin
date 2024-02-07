@@ -94,6 +94,11 @@ module RouterosGuestPlugin
       end)
     end
 
+    provisioner "shell" do
+      require_relative "guest/provisioner/shell"
+      Provisioner::Shell
+    end
+
     
   end
 end
