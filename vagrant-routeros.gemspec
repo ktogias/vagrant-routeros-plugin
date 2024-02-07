@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Konstantinos Togias"]
   gem.email         = ["ktogias@gmail.com"]
   gem.description   = "Vagrant RouterOS guest plugin"
-  gem.summary       = "Vagrant RouterOS guest plugin based on debian"
+  gem.summary       = "A guest plugin for RouterOS. Mostly configuring and disabling capabilities that cause errors."
   gem.license       = 'MIT'
   gem.homepage      = "https://github.com/ktogias/vagrant-routeros-plugin"
 
