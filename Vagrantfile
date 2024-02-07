@@ -14,9 +14,12 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ktogias/mikrotik"
   config.vm.guest = "routeros"
+  config.vm.hostname = "testhost"
+  config.vm.network "private_network", libvirt__network_name: "testnet", libvirt__forward_mode: "veryisolated", libvirt__dhcp_enabled: false
   config.vm.provider :libvirt do |libvirt|
     libvirt.management_network_mac = "52:54:00:ea:f2:ee"
   end
+  
   #config.ssh.shell = "\#"
   #config.ssh.insert_key = false
   # config.vm.allow_fstab_modification = false
